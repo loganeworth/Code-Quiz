@@ -1,0 +1,15 @@
+#header1, #paragraph1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#start-btn {
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
