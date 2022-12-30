@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz</title>
     <link rel="stylesheet" href="./Develop/style.css"/>
     <script src="./Develop/script.js"></script>
 </head>
 <body>
     <div class="container">
         <h1 id="header1">Coding Quiz Challenge</h1>
-        <p id="paragraph1">Try to answer the following questions within the time limit.</p>
-        <button id="start-btn">Start Quiz</button>
+        <p id="paragraph1">Try to answer the following questions about...</p>
+        <button onclick="toggleQuestion1()" id="start-btn">Start Quiz</button>
     </div>
-    <div>
-        <h2>Question #1</h2>
-        <button>Answer 1</button>
-        <button>Answer 2</button>
-        <button>Answer 3</button>
-        <button>Answer 4</button>
+    <div class="container2">
+        <div class="hide">
+            <h2 class="displayQuestion"></h2>
+            <button class="displayAnswer1" onclick="checkAnswer(event)"></button>
+            <button class="displayAnswer2" onclick="checkAnswer(event)"></button>
+            <button class="displayAnswer3" onclick="checkAnswer(event)"></button>
+            <button class="displayAnswer4" onclick="checkAnswer(event)"></button>
+        </div>
     </div>
     
     
