@@ -19,6 +19,36 @@ let questions = [
         },
         correctAnswer: '3'
     },
+    {
+        question: "Which organelles of a cell are referred to as 'the powerhouse of the cell?'",
+        answers: {
+            a: 'Nucleus',
+            b: 'Cytoplasm',
+            c: 'Chloroplast',
+            d: 'Mitochondria',
+        },
+        correctAnswers: 'Mitochondria'
+    },
+    {
+        question: "",
+        answers: {
+            a: '',
+            b: '',
+            c: '',
+            d: '',
+        },
+        correctAnswer: ''
+    },
+    {
+        question: '',
+        answers: {
+            a: '',
+            b: '',
+            c: '',
+            d: '',
+        },
+        correctAnswer: ''
+    }
     
 ]
 console.log(questions[0].question)
@@ -27,7 +57,7 @@ console.log(questions[0].answers.a)
 console.log(questions[0].answers.b)
 console.log(questions[0].answers.c)
 console.log(questions[0].answers.d)
-    var currentQuestion = 1
+    var currentQuestion = 0
 function displayQuestion() {
     let displayQuestionEl = document.querySelector('.displayQuestion')
     let displayAnswer1 = document.querySelector('.displayAnswer1')
@@ -48,11 +78,19 @@ function checkAnswer(event) {
     event.preventDefault()
     console.log(event.target.innerText)
     var correctAnswer = questions[currentQuestion].correctAnswer
-    if (correctAnswer === event.targert.innerText) {
-        console.log(correct)
+    if (correctAnswer === event.target.innerText) {
+        console.log('correct')
+        if ((questions.length - 1) > currentQuestion) {
+            currentQuestion = currentQuestion + 1;
+            displayQuestion();
+        }
     } else {
-        
+        console.log('incorrect')
     }
+
+
+
+
 }
 
 function toggleQuestion1() {
