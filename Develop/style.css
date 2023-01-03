@@ -24,3 +24,8 @@
     display: none;
 }
 
+.timer {
+    display: flex;
+    justify-self: left;
+    align-items: flex-start;
+}
