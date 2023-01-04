@@ -1,4 +1,4 @@
-let questions = [
+const questions = [
     {
         question: "What is 36/6?",
         answers: {
@@ -51,13 +51,16 @@ let questions = [
     }
     
 ]
+let currentQuestion = 0;
+let timeLeft = 30;
+
 console.log(questions[0].question)
 console.log(questions[0].correctAnswer, questions[1].correctAnswer)
 console.log(questions[0].answers.a)
 console.log(questions[0].answers.b)
 console.log(questions[0].answers.c)
 console.log(questions[0].answers.d)
-    let currentQuestion = 0
+
 function displayQuestion() {
     let displayQuestionEl = document.querySelector('.displayQuestion')
     let displayAnswer1 = document.querySelector('.displayAnswer1')
@@ -74,18 +77,25 @@ function displayQuestion() {
 
 }
 
+
+
 function checkAnswer(event) {
     event.preventDefault()
     console.log(event.target.innerText)
     let correctAnswer = questions[currentQuestion].correctAnswer
     if (correctAnswer === event.target.innerText) {
         console.log('correct')
-        if ((questions.length - 1) > currentQuestion) {
-            currentQuestion = currentQuestion + 1;
-            displayQuestion();
-        }
+        currentQuestion = currentQuestion + 1;
+        timeLeft = timeLeft + 1;
+        displayQuestion();
+        
+        // if ((questions.length - 1) > currentQuestion) {
+        //     currentQuestion = currentQuestion + 1;
+        //     displayQuestion();
+        // }
     } else {
         console.log('incorrect')
+        timeLeft = timeLeft - 5;
     }
 
 
@@ -93,12 +103,12 @@ function checkAnswer(event) {
 
 }
 
-function toggleQuestion1() {
-    let Question1 = document.querySelector('.hide');
+
+
+function start() {
+    document.querySelector('.hide').style.display = 'block';
     // let displaySetting = Question1.style.display;
     // let startButton = document.getElementById('start-btn');
-    console.log(Question1)
-    Question1.style.display = 'block'
     displayQuestion()
     // if (displaySetting == 'none') {
     //     Question1.style.display = 'block';
@@ -106,25 +116,43 @@ function toggleQuestion1() {
     // else {
     //     Question1.style.display = 'none';
     // }
-    var timeLeft = 30;
-    var elem = document.querySelector('.timer');
+    // var timeLeft = 30;
+    let elem = document.querySelector('.timer');
     
-    var timerId = setInterval(countdown, 1000);
+    let timerId = setInterval(countdown, 1000);
     
     function countdown() {
-      if (timeLeft == -1) {
+      if (timeLeft === -1) {
         clearTimeout(timerId);
-        doSomething();
+        // doSomething();
+        alert('Time up!')
       } else {
         elem.innerHTML = timeLeft + ' seconds remaining';
         timeLeft--;
       }
     }
-
+    // document.querySelector('.displayAnswer1').addEventListener('click', function() {
+    //     sec -=5;
+    //     elem.innerHTML = timeLeft +sec;
+    // })
 
 }
 
+// let correctAnswer = questions[currentQuestion].correctAnswer
 
+// function checkAnswerAll(event) {
+//     // let userAnswer = getIndexFromId(event.target.id);
+//     if (correctAnswer === event.target.innerText) {
+//         timeLeft++;
+//     } else {
+//         timeLeft -= 5;
+//     }
+// }
+
+// document.querySelector('.displayAnswer1').addEventListener('click', function() {
+//     sec -=5;
+//     // document.querySelector('.timer').innerHTML=
+// })
 
 
 
@@ -169,7 +197,7 @@ function toggleQuestion1() {
 //     }
 // }, 30);
 
-console.log(toggleQuestion1)
+// console.log(toggleQuestion1)
 
 // document.getElementById('start-btn').addEventListener('click',function(){
 //     let hide = document.getElementsByClassName('hide');

@@ -13,15 +13,17 @@
     <div class="container">
         <h1 id="header1">Coding Quiz Challenge</h1>
         <p id="paragraph1">Try to answer the following questions...</p>
-        <button onclick="toggleQuestion1()" id="start-btn">Start Quiz</button>
+        <button onclick="start()" id="start-btn">Start Quiz</button>
     </div>
     <div class="container2">
         <div class="hide">
             <h2 class="displayQuestion"></h2>
-            <button class="displayAnswer1" onclick="checkAnswer(event)"></button>
-            <button class="displayAnswer2" onclick="checkAnswer(event)"></button>
-            <button class="displayAnswer3" onclick="checkAnswer(event)"></button>
-            <button class="displayAnswer4" onclick="checkAnswer(event)"></button>
+            <div class="button-group">
+                <button class="displayAnswer1" onclick="checkAnswer(event)"></button>
+                <button class="displayAnswer2" onclick="checkAnswer(event)"></button>
+                <button class="displayAnswer3" onclick="checkAnswer(event)"></button>
+                <button class="displayAnswer4" onclick="checkAnswer(event)"></button>
+            </div>
         </div>
     </div>
     

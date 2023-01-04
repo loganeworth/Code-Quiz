@@ -29,3 +29,7 @@
     justify-self: left;
     align-items: flex-start;
 }
+
+.button-group {
+    text-align: center;
+}
