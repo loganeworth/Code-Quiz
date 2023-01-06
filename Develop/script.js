@@ -97,10 +97,7 @@ function checkAnswer(event) {
         timeLeft = timeLeft + 1;
         displayQuestion();
         
-        // if ((questions.length - 1) > currentQuestion) {
-        //     currentQuestion = currentQuestion + 1;
-        //     displayQuestion();
-        // }
+        
     } else {
         console.log('incorrect')
         timeLeft = timeLeft - 5;
@@ -110,13 +107,15 @@ function checkAnswer(event) {
 
 }
 
-function Leaderboard(initials, score) {
-    const list = document.querySelector('#user-list')
-    let li = document.createElement('li')
-    list.append(li)
-}
+// *THE BELOW COMMENTED OUT CODE IS FOR LATER, SO I CAN GO BACK AND FIX THIS QUIZ
 
-Leaderboard()
+// function Leaderboard(initials, score) {
+//     const list = document.querySelector('#user-list')
+//     let li = document.createElement('li')
+//     list.append(li)
+// }
+
+// Leaderboard()
 
 
 // localStorage.setItem("#user-text", input.val())
@@ -137,6 +136,8 @@ Leaderboard()
 // }
 // );
 
+// END OF CODE THAT WILL COME BACK TO*
+
 function gameOver() {
     document.querySelector('.form').style.display = 'block';
     document.querySelector('.disappear').style.display = 'none';
@@ -152,16 +153,9 @@ function gameOver() {
 
 function start() {
     document.querySelector('.hide').style.display = 'block';
-    // let displaySetting = Question1.style.display;
-    // let startButton = document.getElementById('start-btn');
+    
     displayQuestion()
-    // if (displaySetting == 'none') {
-    //     Question1.style.display = 'block';
-    // }
-    // else {
-    //     Question1.style.display = 'none';
-    // }
-    // var timeLeft = 30;
+
     let elem = document.querySelector('.timer');
     
     let timerId = setInterval(countdown, 1000);
@@ -169,91 +163,12 @@ function start() {
     function countdown() {
       if (timeLeft === -1) {
         clearTimeout(timerId);
-        // doSomething();
-        // alert('Time up!')
+        
       } else {
         elem.innerHTML = timeLeft + ' seconds remaining';
         timeLeft--;
       }
     }
-    // document.querySelector('.displayAnswer1').addEventListener('click', function() {
-    //     sec -=5;
-    //     elem.innerHTML = timeLeft +sec;
-    // })
-
+    
 }
 
-// let correctAnswer = questions[currentQuestion].correctAnswer
-
-// function checkAnswerAll(event) {
-//     // let userAnswer = getIndexFromId(event.target.id);
-//     if (correctAnswer === event.target.innerText) {
-//         timeLeft++;
-//     } else {
-//         timeLeft -= 5;
-//     }
-// }
-
-// document.querySelector('.displayAnswer1').addEventListener('click', function() {
-//     sec -=5;
-//     // document.querySelector('.timer').innerHTML=
-// })
-
-
-
-
-// const time = document.querySelector('.timer');
-// let timeSecond = 30;
-
-// displayTime(timeSecond)
-
-// const countDown = setInterval (()=>{
-//     timeSecond--;
-//     displayTime(timeSecond);
-//     if(timeSecond <= 0 || timeSecond < 1){
-//         clearInterval(countDown)
-//     }
-// },1000)
-
-// function displayTime(second) {
-//     const min = Math.floor(second / 60);
-//     const sec = Math.floor(second % 60);
-//     time.innerHTML = `${min<10 ? '0': ''}${min}:${sec<10?'0':''}${sec}`
-// }
-
-
-
-
-// time.innerHTML = `00:${timeSecond}`;
-
-// const countDown = setInterval (()=>{
-//     timeSecond--;
-//     time.innerHTML = `00:${timeSecond}`;
-//     if(timeSecond<0 || timeSecond<1);
-// },)
-
-// let count = 30;
-// let interval = setInterval(function(){
-//     document.getElementById('start-btn');
-//     count--;
-//     if (count === 0) {
-//         clearInterval(interval);
-        
-//     }
-// }, 30);
-
-// console.log(toggleQuestion1)
-
-// document.getElementById('start-btn').addEventListener('click',function(){
-//     let hide = document.getElementsByClassName('hide');
-//     for(i =0;i < hide.length ; i++){
-//         hide[i].style.display = 'block';
-//     }
-// })
-
-// document.getElementById('start-btn'),function(){
-//     let hide = document.getElementsByClassName('hide');
-//     for(i =0;i < hide.length ; i++){
-//         hide[i].style.display = 'block';
-//     }
-// }

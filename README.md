@@ -18,7 +18,7 @@ This website is designed to test the users general knowledge.
 
 ## Credits
 
-Myself, Logan Ellingworth
+Myself, Logan Ellingworth.
 
 ## Links
 
