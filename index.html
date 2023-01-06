@@ -11,12 +11,12 @@
 <body>
     <p class="timer">00:00</p>
     <div class="container">
-        <h1 id="header1">Coding Quiz Challenge</h1>
+        <h1 id="header1">Quiz Challenge</h1>
         <p id="paragraph1">Try to answer the following questions...</p>
         <button onclick="start()" id="start-btn">Start Quiz</button>
     </div>
     <div class="container2">
-        <div class="hide">
+        <div class="hide disappear">
             <h2 class="displayQuestion"></h2>
             <div class="button-group">
                 <button class="displayAnswer1" onclick="checkAnswer(event)"></button>
@@ -24,6 +24,15 @@
                 <button class="displayAnswer3" onclick="checkAnswer(event)"></button>
                 <button class="displayAnswer4" onclick="checkAnswer(event)"></button>
             </div>
+        </div>
+        <div class="form hide">
+            <h3>Congratulations! Enter your username/initials to save your score!</h3>
+            <form id="user-form">
+                <label></label>
+                <input id="user-text" class="input">
+                <button class="button">Submit</button>
+            </form>
+            <ul id="user-list"></ul>
         </div>
     </div>
     

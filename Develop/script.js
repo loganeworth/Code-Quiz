@@ -53,6 +53,10 @@ const questions = [
 ]
 let currentQuestion = 0;
 let timeLeft = 30;
+let userForm = document.querySelector('#user-form');
+let userInput = document.querySelector('#user-text');
+let userList = document.querySelector('#user-list');
+let users = [];
 
 console.log(questions[0].question)
 console.log(questions[0].correctAnswer, questions[1].correctAnswer)
@@ -83,6 +87,10 @@ function checkAnswer(event) {
     event.preventDefault()
     console.log(event.target.innerText)
     let correctAnswer = questions[currentQuestion].correctAnswer
+    console.log(correctAnswer)
+    if (currentQuestion === questions.length - 1){
+        gameOver()
+    };
     if (correctAnswer === event.target.innerText) {
         console.log('correct')
         currentQuestion = currentQuestion + 1;
@@ -98,11 +106,48 @@ function checkAnswer(event) {
         timeLeft = timeLeft - 5;
     }
 
-
-
+    // localStorage.setItem(timeLeft)
 
 }
 
+function Leaderboard(initials, score) {
+    const list = document.querySelector('#user-list')
+    let li = document.createElement('li')
+    list.append(li)
+}
+
+Leaderboard()
+
+
+// localStorage.setItem("#user-text", input.val())
+
+// userForm.addEventListener("submit", function(event) {
+//     event.preventDefault();
+
+//     let userText = userInput.value.trim();
+//     if (userText === "") {
+//         return;
+//     }
+
+//     users.push(userText);
+//     userInput.value = "";
+
+//     localStorage.push(userText)
+    
+// }
+// );
+
+function gameOver() {
+    document.querySelector('.form').style.display = 'block';
+    document.querySelector('.disappear').style.display = 'none';
+    console.log(timeLeft)
+    // let input = document.querySelector('.input')
+    // console.log(input)
+    // let button = document.querySelector('.button')
+    // console.log(button)
+    
+    
+}
 
 
 function start() {
@@ -125,7 +170,7 @@ function start() {
       if (timeLeft === -1) {
         clearTimeout(timerId);
         // doSomething();
-        alert('Time up!')
+        // alert('Time up!')
       } else {
         elem.innerHTML = timeLeft + ' seconds remaining';
         timeLeft--;
