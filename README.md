@@ -23,8 +23,7 @@ Myself, Logan Ellingworth.
 ## Links
 
 Deployed page:
-
+https://loganeworth.github.io/Code-Quiz-HW4/
 
 GitHub Repository:
-
-
+https://github.com/loganeworth/Code-Quiz-HW4
